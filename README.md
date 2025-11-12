@@ -180,7 +180,7 @@ Building this project taught me:
 
 ## 👨‍💻 About Me
 
-I'm a 29-year-old from Nepal transitioning from digital marketing/SEO (3 years) to ML/AI. This project is part of my journey to build practical skills and portfolio projects while learning ML fundamentals.
+I'm currently transitioning from digital marketing/SEO (3 years) to ML/AI. This project is part of my journey to build practical skills and portfolio projects while learning ML fundamentals.
 
 **Background:**
 - 3 years in digital marketing/SEO

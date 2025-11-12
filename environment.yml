@@ -1,0 +1,11 @@
+name: streamlit-genai-env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - streamlit==1.29.0
+      - google-generativeai==0.3.2
+      - python-dotenv==1.0.0

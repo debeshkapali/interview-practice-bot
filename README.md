@@ -25,27 +25,40 @@ A simple, focused web app that:
 
 ## ✨ Features
 
-- **20 Curated Questions** across three key areas:
+- **43 Curated Questions** across six key areas:
   - ML Fundamentals (8 questions)
   - Math for ML (6 questions)
   - PyTorch Basics (6 questions)
+  - Deep Learning Fundamentals (8 questions)
+  - Model Evaluation & Metrics (7 questions)
+  - Data Preprocessing & Feature Engineering (8 questions)
 
-- **Category-Based Practice**: Choose to practice all categories or focus on specific areas
-
-- **AI-Powered Feedback**: Get constructive, detailed feedback on your answers including:
+- **Structured Journal-Format Feedback**: Get AI feedback organized into:
+  - Performance summary with rating
   - What you did well
   - Key points you missed
-  - Suggestions for improvement
-  - Rating out of 5
+  - Actionable suggestions for improvement
+  - Ready-to-copy journal entry template with date and learning notes
+
+- **Review Mode & Spaced Repetition**:
+  - Mark questions you struggled with for review
+  - Practice only review questions in dedicated Review Mode
+  - Remove questions from review list once mastered
+  - Track number of questions pending review
+
+- **Category-Based Practice**: Choose to practice all categories or focus on specific areas
 
 - **Progress Tracking**: Monitor your practice with:
   - Total questions answered
   - Category-wise breakdown
-  - Ability to reset and start fresh
+  - Questions marked for review count
+  - Reset functionality to start fresh
 
 - **Hints System**: Get gentle nudges if you're stuck without seeing the full answer
 
 - **Answer Review**: Compare your written answer with the feedback received
+
+- **Robust API Handling**: Automatic retry logic with exponential backoff for reliable feedback generation
 
 ## 🛠️ Tech Stack
 
@@ -120,13 +133,31 @@ The app will open in your browser at `http://localhost:8501`
 
 ## 📚 Usage
 
+### Basic Practice Flow:
+
 1. **Select a category** from the sidebar (or keep "All Categories" for variety)
 2. Click **"Get Question"** to receive a random question
 3. **Read carefully** and use hints if needed
 4. **Type your answer** in the text area
 5. Click **"Submit Answer"** to receive AI feedback
-6. **Review feedback** and your original answer
-7. Click **"Next Question"** to continue practicing
+6. **Review the structured feedback**:
+   - Performance rating
+   - What you did well
+   - Key points you missed
+   - Improvement suggestions
+   - Journal entry template (copy this to your learning journal!)
+7. **Mark for review** if you struggled (click "🔖 Mark for Review")
+8. Click **"Next Question"** to continue practicing
+
+### Using Review Mode:
+
+Review Mode implements spaced repetition to help you master difficult topics:
+
+1. While practicing, **mark questions** you find challenging using "🔖 Mark for Review"
+2. After a few days, switch to **"Review Mode"** in the sidebar
+3. Practice **only** the questions you marked for review
+4. When you've mastered a question, click **"✓ Mastered This!"** to remove it from review
+5. Continue until your review list is empty!
 
 ### Tips for Best Results
 - Take your time - quality matters more than speed

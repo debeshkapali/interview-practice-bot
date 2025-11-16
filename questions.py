@@ -130,7 +130,154 @@ QUESTIONS = {
             "hints": ["Backpropagation", "Computes gradients"],
             "key_points": ["Computes gradients via backpropagation", "Stores gradients in .grad attribute", "Must be called before optimizer.step()"]
         },
-    ]
+    ],
+    
+    "Deep Learning Fundamentals": [
+        {
+            "id": 21,
+            "question": "Explain backpropagation. How does it work?",
+            "hints": ["Chain rule", "Gradient flow backward through network"],
+            "key_points": ["Computes gradients using chain rule", "Propagates error backward through layers", "Essential for training neural networks"]
+        },
+        {
+            "id": 22,
+            "question": "What is a Convolutional Neural Network (CNN) and when would you use it?",
+            "hints": ["Spatial data", "Image processing", "Convolutional layers"],
+            "key_points": ["Designed for spatial/grid data", "Uses convolutional layers to detect patterns", "Primarily used for computer vision tasks", "Parameter sharing and translation invariance"]
+        },
+        {
+            "id": 23,
+            "question": "Explain batch normalization and why it's useful.",
+            "hints": ["Normalizing layer inputs", "Training stability"],
+            "key_points": ["Normalizes inputs to each layer", "Reduces internal covariate shift", "Allows higher learning rates", "Acts as regularization"]
+        },
+        {
+            "id": 24,
+            "question": "What is dropout and how does it prevent overfitting?",
+            "hints": ["Randomly dropping neurons", "Ensemble effect"],
+            "key_points": ["Randomly deactivates neurons during training", "Forces network to learn redundant representations", "Acts as ensemble of multiple networks", "Only used during training"]
+        },
+        {
+            "id": 25,
+            "question": "Explain transfer learning and when you would use it.",
+            "hints": ["Pre-trained models", "Fine-tuning", "Small datasets"],
+            "key_points": ["Using pre-trained model on new task", "Useful with limited data", "Fine-tune last layers or freeze early layers", "Leverages learned features"]
+        },
+        {
+            "id": 26,
+            "question": "What is the vanishing gradient problem and how can you address it?",
+            "hints": ["Deep networks", "Sigmoid/tanh activations", "Gradient flow"],
+            "key_points": ["Gradients become very small in deep networks", "Makes training early layers difficult", "Solutions: ReLU, batch norm, residual connections", "Skip connections help gradient flow"]
+        },
+        {
+            "id": 27,
+            "question": "Explain the difference between RNN and LSTM.",
+            "hints": ["Sequential data", "Memory", "Long-term dependencies"],
+            "key_points": ["RNN: basic recurrent architecture for sequences", "LSTM: has gates (forget, input, output)", "LSTM better at long-term dependencies", "LSTM addresses vanishing gradient in RNNs"]
+        },
+        {
+            "id": 28,
+            "question": "What are residual connections (skip connections) and why are they important?",
+            "hints": ["ResNet", "Deep networks", "Gradient flow"],
+            "key_points": ["Allow input to skip layers", "Enable training very deep networks", "Help gradient flow", "Prevent degradation problem"]
+        },
+    ],
+    
+    "Model Evaluation & Metrics": [
+        {
+            "id": 29,
+            "question": "When would you use accuracy vs F1 score for model evaluation?",
+            "hints": ["Class imbalance", "False positives vs false negatives"],
+            "key_points": ["Accuracy: good for balanced datasets", "F1: better for imbalanced classes", "F1 balances precision and recall", "Accuracy can be misleading with imbalance"]
+        },
+        {
+            "id": 30,
+            "question": "Explain ROC curve and AUC. What do they tell you?",
+            "hints": ["True positive rate vs false positive rate", "Threshold-independent"],
+            "key_points": ["ROC: plots TPR vs FPR at different thresholds", "AUC: area under ROC curve", "Measures classification quality across thresholds", "Higher AUC = better model"]
+        },
+        {
+            "id": 31,
+            "question": "How do you handle class imbalance in your dataset?",
+            "hints": ["Resampling", "Class weights", "Different metrics"],
+            "key_points": ["Oversampling minority class or undersampling majority", "Use class weights in loss function", "SMOTE for synthetic samples", "Use appropriate metrics (F1, precision-recall)"]
+        },
+        {
+            "id": 32,
+            "question": "What is the difference between validation set and test set?",
+            "hints": ["Model selection vs final evaluation", "When to use each"],
+            "key_points": ["Validation: tune hyperparameters and select model", "Test: final, unbiased evaluation", "Test set should never influence training", "Validation used multiple times, test only once"]
+        },
+        {
+            "id": 33,
+            "question": "Explain mean squared error (MSE) vs mean absolute error (MAE).",
+            "hints": ["Regression metrics", "Sensitivity to outliers"],
+            "key_points": ["MSE: squares errors, sensitive to outliers", "MAE: absolute errors, more robust to outliers", "MSE penalizes large errors more", "Choice depends on problem requirements"]
+        },
+        {
+            "id": 34,
+            "question": "What is stratified sampling and when would you use it?",
+            "hints": ["Train/test split", "Class proportions", "Imbalanced data"],
+            "key_points": ["Maintains class proportions in splits", "Important for imbalanced datasets", "Ensures each split is representative", "Used in stratified k-fold cross-validation"]
+        },
+        {
+            "id": 35,
+            "question": "How do you know if your model is overfitting or underfitting?",
+            "hints": ["Training vs validation performance", "Learning curves"],
+            "key_points": ["Overfitting: high train accuracy, low validation accuracy", "Underfitting: low accuracy on both", "Use learning curves to diagnose", "Compare train and validation metrics"]
+        },
+    ],
+    
+    "Data Preprocessing & Feature Engineering": [
+        {
+            "id": 36,
+            "question": "What are different ways to handle missing data?",
+            "hints": ["Deletion", "Imputation", "Context matters"],
+            "key_points": ["Remove rows/columns with missing data", "Impute with mean/median/mode", "Use advanced imputation (KNN, model-based)", "Consider why data is missing (MCAR, MAR, MNAR)"]
+        },
+        {
+            "id": 37,
+            "question": "Explain the difference between normalization and standardization.",
+            "hints": ["Scaling features", "Range vs distribution"],
+            "key_points": ["Normalization: scales to [0,1] range", "Standardization: zero mean, unit variance", "Use standardization for Gaussian-distributed data", "Normalization when you need bounded range"]
+        },
+        {
+            "id": 38,
+            "question": "When would you use one-hot encoding vs label encoding?",
+            "hints": ["Categorical variables", "Nominal vs ordinal"],
+            "key_points": ["One-hot: for nominal (no order) categories", "Label encoding: for ordinal (ordered) categories", "One-hot prevents model from assuming order", "Label encoding more memory efficient"]
+        },
+        {
+            "id": 39,
+            "question": "What is feature scaling and why is it important?",
+            "hints": ["Different units/ranges", "Algorithm sensitivity", "Gradient descent"],
+            "key_points": ["Makes features comparable in scale", "Important for distance-based algorithms", "Speeds up gradient descent", "Not needed for tree-based models"]
+        },
+        {
+            "id": 40,
+            "question": "Explain data augmentation and give examples.",
+            "hints": ["Artificially increasing dataset", "Computer vision", "Preventing overfitting"],
+            "key_points": ["Creates modified versions of training data", "Images: rotation, flipping, cropping, color changes", "Text: synonym replacement, back-translation", "Helps reduce overfitting and improves generalization"]
+        },
+        {
+            "id": 41,
+            "question": "What is feature selection and why is it important?",
+            "hints": ["Reducing dimensionality", "Removing irrelevant features"],
+            "key_points": ["Selecting most relevant features", "Reduces overfitting and training time", "Methods: filter, wrapper, embedded", "Improves model interpretability"]
+        },
+        {
+            "id": 42,
+            "question": "How would you detect and handle outliers in your data?",
+            "hints": ["Statistical methods", "Visualization", "Domain knowledge"],
+            "key_points": ["Detection: z-score, IQR, visualization", "Handling: remove, cap, transform, or keep", "Consider domain context", "Impact depends on algorithm used"]
+        },
+        {
+            "id": 43,
+            "question": "What is the curse of dimensionality and how does it affect ML models?",
+            "hints": ["High-dimensional data", "Distance metrics", "Sparsity"],
+            "key_points": ["Data becomes sparse in high dimensions", "Distance metrics become less meaningful", "Requires exponentially more data", "Dimensionality reduction helps (PCA, feature selection)"]
+        },
+    ],
 }
 
 def get_all_questions():
